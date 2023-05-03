@@ -2,10 +2,15 @@ import React, { useContext, useState } from "react";
 import { Button, Container, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
+// import { getAuth } from "firebase/auth";
+import app from "../../../firebase/firebase.config";
+import { getAuth } from "firebase/auth";
 
 const Register = () => {
   const { createUser ,profileUpdate} = useContext(AuthContext);
   const [accepted, setAccepted] = useState(false);
+  const auth = getAuth(app);
+  const user = auth.currentUser;
 
   const handleRegister = (event) => {
     event.preventDefault();
@@ -25,18 +30,20 @@ const Register = () => {
       .catch((error) => {
         console.log(error);
       });
-
-    //   profileUpdate( photoURL,displayName)
-    //   .then((result) => {
      
-    //     const photoUp = result.user;
-    //     const displayUp = result.user;
-    //     console.log(photoUp,displayUp);
-       
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //   });
+
+      profileUpdate(auth.currentUser, {
+        displayName, photoURL
+      }).then(() => {
+        const displayName = result.user;
+        const photoURL = result.user;
+        console.log(displayName,photoURL);
+        // ...
+      }).catch((error) => {
+        console.log(error);
+      });
+     
+
   };
   const handleAccepted = (event) => {
     setAccepted(event.target.checked);

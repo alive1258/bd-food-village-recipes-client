@@ -4,10 +4,14 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-
+import "./Header.css";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
 import { FaSistrix, FaUserCircle } from "react-icons/fa";
+
+// import Image from "react-bootstrap/Image";
+// import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+// import { Tooltip } from "react-bootstrap";
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -65,9 +69,20 @@ const Header = () => {
 
             <Nav className="gap-2">
               {user && (
-                <FaUserCircle
-                  style={{ fontSize: "2rem", color: "white" }}
-                ></FaUserCircle>
+                <div className="dropdown">
+                  <span>
+                    <img
+                      style={{
+                        height: "40px",
+                        width: "40px",
+                        borderRadius: "50%",
+                      }}
+                      src={user?.photoURL}
+                      alt=""
+                    />
+                  </span>
+                  <div className="dropdown-content">{user?.displayName}</div>
+                </div>
               )}
 
               {user ? (

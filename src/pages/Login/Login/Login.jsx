@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Button, Container, Form } from "react-bootstrap";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
@@ -8,6 +8,7 @@ import app from "../../../firebase/firebase.config";
 const Login = () => {
     const auth = getAuth(app);
   const provider = new GoogleAuthProvider();
+  const [userInfos,setUserInfos]=useState(null)
 
   const { signIn } = useContext(AuthContext);
 
@@ -28,6 +29,7 @@ const Login = () => {
       .then((result) => {
         const loggedUser = result.user;
         console.log(loggedUser);
+        setUserInfos(loggedUser)
         navigate(from, { replace: true });
       })
       .catch((error) => {
@@ -43,12 +45,14 @@ const Login = () => {
         .then((result) => {
           const user = result.user;
           console.log(user);
+          setUserInfos(user)
           navigate(from, { replace: true });
         })
         .catch((error) => {
           console.log(error.massage);
         });
     };
+
 
   return (
     <div>
@@ -75,18 +79,21 @@ const Login = () => {
             />
           </Form.Group>
 
-          <Button className="w-25" variant="primary" type="submit">
+          <Button className="w-25 mt-2 me-2" variant="primary" type="submit">
             Login
           </Button>
-          <br />
+          
           <Button
             onClick={handleGoogleSignIn}
-            className="mt-2 w-25"
+            className="mt-2 w-25 me-2"
             variant="info"
           >
             Google
           </Button>
-          <br />
+          <Button className="w-25 mt-2 me-2" variant="secondary" type="submit">
+            GitHub
+          </Button><br />
+          
           <Form.Text className="text-secondary ">
             Don't Have an Account ?<Link to="/register">Register</Link>
           </Form.Text>
