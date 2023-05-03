@@ -1,60 +1,87 @@
-import React from "react";
+import React, { useContext } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import { FaSistrix } from "react-icons/fa";
+
+import { Link } from "react-router-dom";
+import { AuthContext } from "../../../providers/AuthProvider";
+import { FaSistrix, FaUserCircle } from "react-icons/fa";
 
 const Header = () => {
+  const { user } = useContext(AuthContext);
+
   return (
     <div className="">
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Container>
-          <Navbar.Brand href="#home">
-            <div>
-              <h4 style={{ color: "Gray" }}>
-                
+          <Navbar.Brand >
+            
+              <h4 className="text-white">
                 Recipes
                 <span style={{ color: "greenyellow" }}>BD</span>
               </h4>
-            </div>
+            
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="mx-auto">
-              <Nav.Link href="#features">Home</Nav.Link>
-              <Nav.Link href="#pricing">Blog</Nav.Link>
-              <Nav.Link href="#pricing">About</Nav.Link>
-              <Nav.Link href="#pricing">Contact Us</Nav.Link>
+            <Nav className="mx-auto gap-4 align-items-center">
+              {/* <Nav.Link href="#features">Home</Nav.Link> */}
 
-              <Form className="d-flex">
+              <Link className=" text-white" to="/">
+                Home
+              </Link>
+              <Link className=" text-white" to="/blog">
+                Blog
+              </Link>
+              <Link className=" text-white" to="/about">
+                About
+              </Link>
+              <Link className=" text-white" s to="/contact">
+                Contact Us
+              </Link>
+
+              <Form className="d-flex ps-4">
                 <Form.Control
                   type="search"
                   placeholder="Search Recipes"
                   className="me-2"
                   aria-label="Search"
                 />
-                <div className="p-2 rounded" style={{ background: "greenyellow" }}>
+                <div
+                  className="p-2 rounded"
+                  style={{ background: "greenyellow" }}
+                >
                   <FaSistrix />
                 </div>
                 {/* <Button style={{background:"greenyellow"}} variant="outline-success">Search</Button> */}
               </Form>
             </Nav>
 
-            <Nav>
-              <Nav.Link href="#deets">
+            <Nav className="gap-2">
+              
+              {user && (
+                <FaUserCircle style={{ fontSize: "2rem" ,color:"white"}}></FaUserCircle>
+              )}
+
+              {user ? (
                 <Button
                   style={{ background: "greenyellow" }}
                   variant="outline-success"
                 >
-                  Sign in
+                  LogOut
                 </Button>
-              </Nav.Link>
-              {/* <Nav.Link eventKey={2} href="#memes">
-              Dank memes
-            </Nav.Link> */}
+              ) : (
+                <Link to="/login">
+                  <Button
+                    style={{ background: "greenyellow" }}
+                    variant="outline-success"
+                  >
+                    Login
+                  </Button>
+                </Link>
+              )}
             </Nav>
           </Navbar.Collapse>
         </Container>
