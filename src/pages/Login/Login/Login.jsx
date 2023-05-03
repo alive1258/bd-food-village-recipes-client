@@ -2,12 +2,14 @@ import React, { useContext, useState } from "react";
 import { Button, Container, Form } from "react-bootstrap";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
-import { GoogleAuthProvider ,getAuth, signInWithPopup} from "firebase/auth";
+import { GithubAuthProvider, GoogleAuthProvider ,getAuth, signInWithPopup} from "firebase/auth";
 import app from "../../../firebase/firebase.config";
 
 const Login = () => {
     const auth = getAuth(app);
-  const provider = new GoogleAuthProvider();
+  const providerGoogle = new GoogleAuthProvider();
+  const providerGitHub = new GithubAuthProvider();
+
   const [userInfos,setUserInfos]=useState(null)
 
   const { signIn } = useContext(AuthContext);
@@ -41,7 +43,20 @@ const Login = () => {
 
 
     const handleGoogleSignIn = () => {
-      signInWithPopup(auth, provider)
+      signInWithPopup(auth, providerGoogle)
+        .then((result) => {
+          const userLogIn = result.user;
+          console.log(userLogIn);
+          setUserInfos(userLogIn)
+          navigate(from, { replace: true });
+        })
+        .catch((error) => {
+          console.log(error.massage);
+        });
+    };
+
+    const handleGitHubSignIn=()=>{
+        signInWithPopup(auth, providerGitHub)
         .then((result) => {
           const user = result.user;
           console.log(user);
@@ -51,7 +66,8 @@ const Login = () => {
         .catch((error) => {
           console.log(error.massage);
         });
-    };
+
+    }
 
 
   return (
@@ -90,7 +106,7 @@ const Login = () => {
           >
             Google
           </Button>
-          <Button className="w-25 mt-2 me-2" variant="secondary" type="submit">
+          <Button onClick={handleGitHubSignIn} className="w-25 mt-2 me-2" variant="secondary" type="submit">
             GitHub
           </Button><br />
           
