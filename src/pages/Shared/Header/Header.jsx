@@ -10,19 +10,23 @@ import { AuthContext } from "../../../providers/AuthProvider";
 import { FaSistrix, FaUserCircle } from "react-icons/fa";
 
 const Header = () => {
-  const { user } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut()
+      .then()
+      .catch((error) => console.log(error));
+  };
 
   return (
     <div className="">
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Container>
-          <Navbar.Brand >
-            
-              <h4 className="text-white">
-                Recipes
-                <span style={{ color: "greenyellow" }}>BD</span>
-              </h4>
-            
+          <Navbar.Brand>
+            <h4 className="text-white">
+              Recipes
+              <span style={{ color: "greenyellow" }}>BD</span>
+            </h4>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
@@ -60,13 +64,15 @@ const Header = () => {
             </Nav>
 
             <Nav className="gap-2">
-              
               {user && (
-                <FaUserCircle style={{ fontSize: "2rem" ,color:"white"}}></FaUserCircle>
+                <FaUserCircle
+                  style={{ fontSize: "2rem", color: "white" }}
+                ></FaUserCircle>
               )}
 
               {user ? (
                 <Button
+                  onClick={handleLogOut}
                   style={{ background: "greenyellow" }}
                   variant="outline-success"
                 >

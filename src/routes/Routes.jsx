@@ -10,6 +10,8 @@ import Footer from "../pages/Shared/Footer/Footer";
 import LoginLayout from "../layout/LoginLayout/LoginLayout";
 import Login from "../pages/Login/Login/Login";
 import Register from "../pages/Login/Register/Register";
+import BdChefDetails from "../pages/BdChefDetails/BdChefDetails";
+import PrivetRoute from "./PrivetRoute";
 
 const router = createBrowserRouter([
 
@@ -50,6 +52,10 @@ const router = createBrowserRouter([
       {
         path:'register',
         element:<Register></Register>
+      },
+      {
+        path:'bdchef',
+        element:<BdChefDetails></BdChefDetails>
       }
     ]
   }
@@ -57,7 +63,7 @@ const router = createBrowserRouter([
 
   {
     path: "news",
-    element: <RecipesLayout></RecipesLayout>,
+    element: <PrivetRoute><RecipesLayout></RecipesLayout></PrivetRoute>,
     children: [
       {
         path: ":id",

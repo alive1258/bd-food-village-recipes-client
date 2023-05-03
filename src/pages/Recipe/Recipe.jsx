@@ -22,6 +22,7 @@ const Recipe = ({recipesData}) => {
               </p>
               <p>id:---- {_id}</p>
               <Link to={`/news/${_id}`}>details</Link>
+              {/* <Link to={'/bdchef'}>details</Link> */}
             </div>
           </div>
         </div>
