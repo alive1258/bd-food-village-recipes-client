@@ -4,8 +4,10 @@ import {
   getAuth,
   onAuthStateChanged,
   signInWithEmailAndPassword,
+//   signInWithPopup,
   signOut,
   updateProfile,
+
 } from "firebase/auth";
 import app from "../firebase/firebase.config";
 
@@ -20,12 +22,17 @@ const AuthProvider = ({ children }) => {
   const createUser = (email, password) => {
     setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
+    // createUserWithEmailAndPassword(auth, email, password)
   };
 
   const signIn = (email, password) => {
     setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
+//   const signInGoogle=()=>{
+//     return signInWithPopup(auth, provider)
+
+//   }
   const logOut = () => {
     setLoading(true);
     return signOut(auth);
@@ -52,6 +59,7 @@ const AuthProvider = ({ children }) => {
     signIn,
     profileUpdate,
     logOut,
+    // signInGoogle,
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>

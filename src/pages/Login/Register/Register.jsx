@@ -94,7 +94,7 @@ const Register = () => {
               name="accept"
               label={
                 <>
-                  Accept <Link to="/trems"> terms and condition</Link>
+                  Accept <Link to="/terms"> terms and condition</Link>
                 </>
               }
             />

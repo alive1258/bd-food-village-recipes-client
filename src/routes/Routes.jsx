@@ -12,6 +12,7 @@ import Login from "../pages/Login/Login/Login";
 import Register from "../pages/Login/Register/Register";
 import BdChefDetails from "../pages/BdChefDetails/BdChefDetails";
 import PrivetRoute from "./PrivetRoute";
+import Terms from "../pages/Shared/Terms/Terms";
 
 const router = createBrowserRouter([
 
@@ -53,6 +54,11 @@ const router = createBrowserRouter([
         path:'register',
         element:<Register></Register>
       },
+      {
+        path:'terms',
+        element:<Terms></Terms>
+      }
+      ,
       {
         path:'bdchef',
         element:<BdChefDetails></BdChefDetails>
