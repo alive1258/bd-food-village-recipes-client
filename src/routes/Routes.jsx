@@ -21,7 +21,6 @@ import ErrorPage from "../pages/ErrorPage/ErrorPage";
 const router = createBrowserRouter([
   {
     path: "/",
-
     element: <Main></Main>,
     errorElement:<ErrorPage></ErrorPage>,
     children: [
@@ -29,6 +28,7 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home></Home>,
       },
+ 
       {
         path: "detail",
         element: <ChefDetail></ChefDetail>,
@@ -79,7 +79,7 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: "news",
+    path: "recipe",
     element: (
       <PrivetRoute>
         <RecipesLayout></RecipesLayout>

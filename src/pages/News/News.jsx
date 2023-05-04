@@ -5,17 +5,17 @@ import { useLoaderData } from "react-router-dom";
 // import Footer from "../Shared/Footer/Footer";
 
 const News = () => {
-    const allRecipes = useLoaderData();
+    const recipe = useLoaderData();
     // const {author}=allRecipes
 
-  // console.log('allrecipes---------',allRecipes)
+  console.log('recipe---------',recipe)
   const [allChefs, setAllChefs] = useState([]);
 //   const {_id} =useParams()
 
 //   useEffect(() => {
 //     fetch(`http://localhost:5000/recipes/${params._id}`)
 //       .then((res) => res.json())
-//       // .then(data=>console.log(data))
+//       .then(data=>console.log(data))
 //       .then((data) => setAllChefs(data));
 //     console.log("allChefs new...", allChefs);
 //   }, []);
@@ -34,7 +34,7 @@ const News = () => {
           <Card.Body>
             {/* <Card.Title>name:---{author.name}</Card.Title> */}
             <Card.Text>title....</Card.Text>
-            <Button variant="primary">Go somewhere</Button>
+            <Button variant="primary">Favorite </Button>
           </Card.Body>
         </Card>
       </Container>

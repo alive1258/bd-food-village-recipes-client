@@ -4,13 +4,14 @@ import { initializeApp } from "firebase/app";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+console.log("environment",import.meta.env.VITE_apiKey)
 const firebaseConfig = {
-  apiKey: "AIzaSyAXiq0_iIxqFlZEBtqIQk0YUuqKMigNf94",
-  authDomain: "bd-food-village-recipes.firebaseapp.com",
-  projectId: "bd-food-village-recipes",
-  storageBucket: "bd-food-village-recipes.appspot.com",
-  messagingSenderId: "838680931406",
-  appId: "1:838680931406:web:96b19c053d6a41eedaa71f"
+  apiKey: import.meta.env.VITE_apiKey,
+  authDomain: import.meta.env.VITE_authDomain,
+  projectId: import.meta.env.VITE_projectId,
+  storageBucket: import.meta.env.VITE_storageBucket,
+  messagingSenderId: import.meta.env.VITE_messagingSenderId,
+  appId: import.meta.env.VITE_appId,
 };
 
 // Initialize Firebase

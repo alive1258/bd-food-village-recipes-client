@@ -34,7 +34,7 @@ const Recipe = ({ recipesData }) => {
               </div>
              <Button className="w-100"
              style={{background: "greenyellow",border:'none'}}  
-                 > <Link to={`/news/${_id}`} className="text-white" style={{ textDecoration:'none' }}>View Recipes</Link></Button>
+                 > <Link to={`/recipe/${_id}`} className="text-white" style={{ textDecoration:'none' }}>View Recipes</Link></Button>
               
             </div>
           </div>

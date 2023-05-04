@@ -8,7 +8,7 @@ const HomeBanner = () => {
       <Container className="mt-4 rounded" style={{ background: "gray" }}>
         <Carousel>
           <Carousel.Item interval={1000}>
-            <div className="d-md-flex  align-items-center justify-content-around gap-4 px-4 py-4">
+            <div className="d-md-flex  align-items-center justify-content-around gap-4 px-2  py-4">
               <div>
                 <img
                   className="d-block img-fluid"
@@ -32,7 +32,7 @@ const HomeBanner = () => {
           </Carousel.Item>
 
           <Carousel.Item interval={500}>
-            <div className="d-md-flex  align-items-center justify-content-around gap-4 px-4 py-4">
+            <div className="d-md-flex  align-items-center justify-content-around gap-4 px-2  py-4">
               <div>
                 <img
                   className="d-block img-fluid "
@@ -56,7 +56,7 @@ const HomeBanner = () => {
             </div>
           </Carousel.Item>
           <Carousel.Item>
-            <div className="d-md-flex  align-items-center justify-content-around gap-4 px-4 py-4">
+            <div className="d-md-flex  align-items-center justify-content-around gap-4 px-2 py-4">
               <div>
                 <img
                   className="d-block img-fluid "
