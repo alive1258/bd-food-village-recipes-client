@@ -3,6 +3,7 @@ import { Button } from "react-bootstrap";
 import { SlLike } from "react-icons/sl";
 import { Link } from "react-router-dom";
 
+
 const Recipe = ({ recipesData }) => {
   const { name, _id, picture,experience ,numberRecipes,like} = recipesData;
   return (
@@ -10,13 +11,16 @@ const Recipe = ({ recipesData }) => {
     
       <div className="mt-4 ">
         <div className="col ">
-          <div className="card h-100 shadow-lg p-3 mb-5 bg-body rounded">
+          <div  className="card h-100 shadow-lg p-3 mb-5 bg-body rounded">
+         
+
             <img
               className="card-img-top p-2 "
        
               src={picture}
               alt=""
             />
+           
             <div className="card-body">
               <div></div>
               <h4 className="card-text">

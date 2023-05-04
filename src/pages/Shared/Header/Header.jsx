@@ -37,7 +37,7 @@ const Header = () => {
             <Nav className="mx-auto gap-4 align-items-center">
               {/* <Nav.Link href="#features">Home</Nav.Link> */}
 
-              <Link className=" text-white" to="/">
+              <Link className=" text-white " to="/">
                 Home
               </Link>
               <Link className=" text-white" to="/blog">
