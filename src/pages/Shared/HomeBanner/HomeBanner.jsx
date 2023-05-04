@@ -5,13 +5,13 @@ import Carousel from "react-bootstrap/Carousel";
 const HomeBanner = () => {
   return (
     <div>
-      <Container className="mt-4 rounded " style={{ background: "Gray" }}>
+      <Container className="mt-4 rounded" style={{ background: "Gray" }}>
         <Carousel>
           <Carousel.Item interval={1000}>
             <div className="d-md-flex  align-items-center justify-content-around gap-4 px-4 py-4">
               <div>
                 <img
-                  className="d-block w-100 "
+                  className="d-block img-fluid"
                   src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fGZvb2R8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
                   alt="First slide"
                 />
@@ -19,7 +19,7 @@ const HomeBanner = () => {
 
               <div>
                 <h3 style={{ color: "greenyellow" }}>
-                  Bangladesh Food Village Recipes
+                  Bangladesh Food  Recipes
                 </h3>
                 <p className="text-white">
                   It's time to kick start a new lifestyle.
@@ -35,21 +35,20 @@ const HomeBanner = () => {
             <div className="d-md-flex  align-items-center justify-content-around gap-4 px-4 py-4">
               <div>
                 <img
-                  className="d-block w-100 "
-                  src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fGZvb2R8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+                  className="d-block img-fluid "
+                  src="https://images.unsplash.com/photo-1606787366850-de6330128bfc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGZvb2R8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
                   alt="First slide"
                 />
               </div>
 
               <div >
                 <h3 style={{ color: "greenyellow" }}>
-                  Bangladesh Food Village Recipes
+                  Bangladesh Food  Recipes
                 </h3>
-                <p className="text-white"> If you are ready to change your relationship with food for the
+                <p className="text-white">  your relationship with food for the
                   better,</p>
                 <p className="text-white">
-                  follow us @healthyfirst for your daily meal plans and
-                  updates
+                  follow us @healthyfirst for your daily meal 
                 </p>
               </div>
             </div>
@@ -58,18 +57,19 @@ const HomeBanner = () => {
             <div className="d-md-flex  align-items-center justify-content-around gap-4 px-4 py-4">
               <div>
                 <img
-                  className="d-block w-100 "
-                  src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fGZvb2R8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+                
+                  className="d-block img-fluid "
+                  src="https://images.unsplash.com/photo-1547592180-85f173990554?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTgyfHxmb29kfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
                   alt="First slide"
                 />
               </div>
 
               <div className="mt-2">
                 <h3 style={{ color: "greenyellow" }}>
-                  Bangladesh Food Village Recipes
+                  Bangladesh Food  Recipes
                 </h3>
-                <p className="text-white">Healthy Cooking Tips and the Right Nutrition</p>
-                <p className="text-white">Build good habits with us and our meal
+                <p className="text-white">Healthy Cooking Tips & Right Nutrition</p>
+                <p className="text-white">Build good habits with us & our meal
                   plans.</p>
               </div>
             </div>

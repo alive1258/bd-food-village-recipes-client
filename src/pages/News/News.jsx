@@ -1,21 +1,24 @@
 import React, { useEffect, useState } from "react";
 import { Button, Card, Container } from "react-bootstrap";
+import { useParams } from "react-router-dom";
 import { useLoaderData } from "react-router-dom";
-import Footer from "../Shared/Footer/Footer";
+// import Footer from "../Shared/Footer/Footer";
 
 const News = () => {
-  //   const allRecipes = useLoaderData();
+    const allRecipes = useLoaderData();
+    // const {author}=allRecipes
 
   // console.log('allrecipes---------',allRecipes)
   const [allChefs, setAllChefs] = useState([]);
+//   const {_id} =useParams()
 
-  useEffect(() => {
-    fetch("http://localhost:5000/recipes/6450e46704881e7bd9e14f2a")
-      .then((res) => res.json())
-      // .then(data=>console.log(data))
-      .then((data) => setAllChefs(data));
-    console.log("allChefs new...", allChefs);
-  }, []);
+//   useEffect(() => {
+//     fetch(`http://localhost:5000/recipes/${params._id}`)
+//       .then((res) => res.json())
+//       // .then(data=>console.log(data))
+//       .then((data) => setAllChefs(data));
+//     console.log("allChefs new...", allChefs);
+//   }, []);
 
   return (
     <div style={{height:'70vh'}}>
@@ -29,7 +32,7 @@ const News = () => {
         <Card>
           <Card.Img variant="top" src="" />
           <Card.Body>
-            <Card.Title>name:---</Card.Title>
+            {/* <Card.Title>name:---{author.name}</Card.Title> */}
             <Card.Text>title....</Card.Text>
             <Button variant="primary">Go somewhere</Button>
           </Card.Body>

@@ -6,6 +6,8 @@ import Carousel from "react-bootstrap/Carousel";
 import HomeBanner from "../pages/Shared/HomeBanner/HomeBanner";
 import Recipe from "../pages/Recipe/Recipe";
 import Recipes from "../pages/Home/Recipes/Recipes";
+import HealthyMeals from "../pages/Home/HealthyMeals/HealthyMeals";
+import PopularRecipes from "../pages/Home/PopularRecipes/PopularRecipes";
 
 const Main = () => {
   return (
@@ -13,6 +15,8 @@ const Main = () => {
       <Header></Header>
       <HomeBanner></HomeBanner>
     <Recipes></Recipes>
+    <HealthyMeals></HealthyMeals>
+    <PopularRecipes></PopularRecipes>
       <Footer></Footer>
     </div>
   );
