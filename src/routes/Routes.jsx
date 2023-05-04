@@ -13,9 +13,11 @@ import Register from "../pages/Login/Register/Register";
 import BdChefDetails from "../pages/BdChefDetails/BdChefDetails";
 import PrivetRoute from "./PrivetRoute";
 import Terms from "../pages/Shared/Terms/Terms";
+import About from "../pages/About/About";
+import Blog from "../pages/Blog/Blog";
+import Contact from "../pages/Contact/Contact";
 
 const router = createBrowserRouter([
-
   {
     path: "/",
     element: <Main></Main>,
@@ -23,59 +25,69 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        
       },
       {
-        path:'detail',
-        element:<ChefDetail></ChefDetail>
-      }
-      ,
-
+        path: "detail",
+        element: <ChefDetail></ChefDetail>,
+      },
+   
       {
         path: "recipes/:id",
         element: <Footer></Footer>,
-
       },
     ],
   },
-    {
-    path:'/',
-    element:<LoginLayout></LoginLayout>,
-    children:[
+  {
+    path: "/",
+    element: <LoginLayout></LoginLayout>,
+    children: [
       {
-        path:'/',
-        element:<Navigate to='recipes'></Navigate>
+        path: "/",
+        element: <Navigate to="recipes"></Navigate>,
       },
       {
-        path:'/login',
-        element:<Login></Login>
+        path:'about',
+        element:<About></About>
       },
       {
-        path:'register',
-        element:<Register></Register>
+        path:'blog',
+        element:<Blog></Blog>
       },
       {
-        path:'terms',
-        element:<Terms></Terms>
-      }
-      ,
+        path:'contact',
+        element:<Contact></Contact>
+      },
       {
-        path:'bdchef',
-        element:<BdChefDetails></BdChefDetails>
-      }
-    ]
-  }
-  ,
-
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "register",
+        element: <Register></Register>,
+      },
+      {
+        path: "terms",
+        element: <Terms></Terms>,
+      },
+      {
+        path: "bdchef",
+        element: <BdChefDetails></BdChefDetails>,
+      },
+    ],
+  },
   {
     path: "news",
-    element: <PrivetRoute><RecipesLayout></RecipesLayout></PrivetRoute>,
+    element: (
+      <PrivetRoute>
+        <RecipesLayout></RecipesLayout>
+      </PrivetRoute>
+    ),
     children: [
       {
         path: ":id",
         element: <News></News>,
-        loader:({params})=>fetch(`http://localhost:5000/recipes/${params.id}`)
-     
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/recipes/${params.id}`),
       },
     ],
   },

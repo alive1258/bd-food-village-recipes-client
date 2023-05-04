@@ -7,43 +7,63 @@ import app from "../../../firebase/firebase.config";
 import { getAuth } from "firebase/auth";
 
 const Register = () => {
-  const { createUser ,profileUpdate} = useContext(AuthContext);
+  const { createUser, profileUpdate } = useContext(AuthContext);
   const [accepted, setAccepted] = useState(false);
+  const [registerError, setRegisterError] = useState("");
+//   const [success, setSuccess] = useState("");
+
+  console.log("registerError...", registerError);
   const auth = getAuth(app);
-  const user = auth.currentUser;
+    const user = auth.currentUser;
 
   const handleRegister = (event) => {
     event.preventDefault();
+    // setSuccess('')
+    setRegisterError('')
     const form = event.target;
     const displayName = form.name.value;
     const photoURL = form.photo.value;
     const email = form.email.value;
     const password = form.password.value;
 
+    // if(!/(?=.*[A_Z])/.test(password)){
+    //     setRegisterError('usepcase')
+    //     return;
+    // }
+    if(password.length <6){
+        setRegisterError('please add at least 6 characters in your password');
+        return;
+    }
+  
     console.log(photoURL, displayName, email, password);
     form.reset("");
     createUser(email, password)
       .then((result) => {
         const createdUser = result.user;
         console.log(createdUser);
+        setRegisterError("");
+        setSuccess('user has crated successfully')
       })
       .catch((error) => {
-        console.log(error);
+        console.log(error.massage);
+        setRegisterError(error.massage);
+        setSuccess('')
       });
-     
 
-      profileUpdate(auth.currentUser, {
-        displayName, photoURL
-      }).then(() => {
+    profileUpdate(auth.currentUser, {
+      displayName,
+      photoURL,
+    })
+      .then(() => {
         const displayName = result.user;
         const photoURL = result.user;
-        console.log(displayName,photoURL);
-        // ...
-      }).catch((error) => {
-        console.log(error);
+        console.log(displayName, photoURL);
+        setRegisterError("");
+      })
+      .catch((error) => {
+        console.log(error.massage);
+        setRegisterError(error.massage);
       });
-     
-
   };
   const handleAccepted = (event) => {
     setAccepted(event.target.checked);
@@ -59,8 +79,8 @@ const Register = () => {
             <Form.Control
               type="text"
               name="name"
-              required
               placeholder="Enter Your Name"
+              required
             />
           </Form.Group>
 
@@ -69,8 +89,8 @@ const Register = () => {
             <Form.Control
               type="text"
               name="photo"
-              required
               placeholder="Enter Photo URL"
+              required
             />
           </Form.Group>
 
@@ -79,8 +99,8 @@ const Register = () => {
             <Form.Control
               type="email"
               name="email"
-              required
               placeholder="Enter email"
+              required
             />
           </Form.Group>
 
@@ -89,8 +109,8 @@ const Register = () => {
             <Form.Control
               type="password"
               name="password"
-              required
               placeholder="Password"
+              required
             />
           </Form.Group>
 
@@ -113,11 +133,12 @@ const Register = () => {
           <br />
           <Form.Text className="text-secondary">
             Already have an account ?<Link to="/login">Login</Link>
-          </Form.Text>
-          <Form.Text className="text-success"></Form.Text>
-          <Form.Text className="text-danger"></Form.Text>
+          </Form.Text> <br />
+          {/* <Form.Text className="text-success">{success}</Form.Text> <br /> */}
+          <Form.Text className="text-danger">{registerError}</Form.Text>
         </Form>
       </Container>
+    
     </div>
   );
 };
