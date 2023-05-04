@@ -3,13 +3,12 @@ import { Container } from "react-bootstrap";
 import Carousel from "react-bootstrap/Carousel";
 
 const HomeBanner = () => {
-
   return (
     <div>
       <Container className="mt-4 rounded " style={{ background: "Gray" }}>
         <Carousel>
           <Carousel.Item interval={1000}>
-            <div className="d-flex align-items-center justify-content-between px-4 py-4">
+            <div className="d-md-flex  align-items-center justify-content-around gap-4 px-4 py-4">
               <div>
                 <img
                   className="d-block w-100 "
@@ -22,15 +21,18 @@ const HomeBanner = () => {
                 <h3 style={{ color: "greenyellow" }}>
                   Bangladesh Food Village Recipes
                 </h3>
-                <p>
-                  Nulla vitae elit libero, a pharetra augue mollis interdum.
+                <p className="text-white">
+                  It's time to kick start a new lifestyle.
                 </p>
+                <p className="text-white">Start eating feeling
+                  and living better today.</p>
+                
               </div>
             </div>
           </Carousel.Item>
 
           <Carousel.Item interval={500}>
-            <div className="d-flex align-items-center justify-content-between px-4 py-4">
+            <div className="d-md-flex  align-items-center justify-content-around gap-4 px-4 py-4">
               <div>
                 <img
                   className="d-block w-100 "
@@ -39,18 +41,21 @@ const HomeBanner = () => {
                 />
               </div>
 
-              <div>
+              <div >
                 <h3 style={{ color: "greenyellow" }}>
                   Bangladesh Food Village Recipes
                 </h3>
-                <p>
-                  Nulla vitae elit libero, a pharetra augue mollis interdum.
+                <p className="text-white"> If you are ready to change your relationship with food for the
+                  better,</p>
+                <p className="text-white">
+                  follow us @healthyfirst for your daily meal plans and
+                  updates
                 </p>
               </div>
             </div>
           </Carousel.Item>
           <Carousel.Item>
-            <div className="d-flex align-items-center justify-content-between px-4 py-4">
+            <div className="d-md-flex  align-items-center justify-content-around gap-4 px-4 py-4">
               <div>
                 <img
                   className="d-block w-100 "
@@ -59,13 +64,13 @@ const HomeBanner = () => {
                 />
               </div>
 
-              <div>
+              <div className="mt-2">
                 <h3 style={{ color: "greenyellow" }}>
                   Bangladesh Food Village Recipes
                 </h3>
-                <p>
-                  Nulla vitae elit libero, a pharetra augue mollis interdum.
-                </p>
+                <p className="text-white">Healthy Cooking Tips and the Right Nutrition</p>
+                <p className="text-white">Build good habits with us and our meal
+                  plans.</p>
               </div>
             </div>
           </Carousel.Item>

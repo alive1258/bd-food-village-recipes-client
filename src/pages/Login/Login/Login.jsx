@@ -44,14 +44,16 @@ const Login = () => {
       setLogInError("please add at least 6 characters in your password");
       return;
     }
-    // else if(email !== email){
-    //     setLogInError('email dose not match');
-    //     return;
-    // }
-    // else if(password !== password){
-    //     setLogInError('password dose not match');
-    //     return;
-    // }
+
+    if(email !== email){
+        setLogInError('email dose not match');
+        return;
+    }
+
+    if(password !== password){
+        setLogInError('password dose not match');
+        return;
+    }
 
     signIn(email, password)
       .then((result) => {
@@ -94,7 +96,7 @@ const Login = () => {
   };
 
   return (
-    <div>
+    <div style={{height:'70vh'}}>
       <h3 className="text-center">Please Login</h3>
       <Container className="row d-flex mx-auto justify-content-center">
         <Form className="col-md-6 " onSubmit={handleLogin}>

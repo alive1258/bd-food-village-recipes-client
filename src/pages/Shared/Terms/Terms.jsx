@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Terms = () => {
   return (
-    <Container className="mt-4 py-4">
+    <Container className="mt-4 py-4" style={{height:'70vh'}}>
       <h1>term and conditions</h1>
       <p>
         {" "}

@@ -2,7 +2,7 @@ import React from 'react';
 
 const Blog = () => {
     return (
-        <div>
+        <div style={{height:'70vh'}}>
             Blog
         </div>
     );

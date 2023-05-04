@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <div style={{ background: "black" }} className="mt-4 py-4">
       <Container >
-        <div className="row row-cols-1 row-cols-md-4 g-2">
+        <div className="row row-cols-1 row-cols-md-4 g-4">
           <div className=" text-white">
             <h3 style={{ color: "darkseagreen", cursor: "pointer" }}>
               Know Us
@@ -45,14 +45,14 @@ const Footer = () => {
             <h3 style={{ color: "darkseagreen", cursor: "pointer" }}>
             Download App
             </h3>
-            <div style={{background:'gray'}} className="rounded d-flex py-2 px-4 gap-2 align-items-center">
+            <div style={{background:'gray'}} className="rounded d-flex py-2 px-4 gap-4 align-items-center">
             <FaGooglePlay style={{fontSize:'26px'}} />
            <div>
           <p> GET IT ON</p>
             <p>Google Play</p>
            </div>
             </div>
-            <div style={{background:'gray'}} className="mt-2 rounded d-flex py-2 px-4 gap-2 align-items-center">
+            <div style={{background:'gray'}} className="mt-2 rounded d-flex py-2 px-4 gap-4 align-items-center">
             <FaAppleAlt style={{fontSize:'26px'}} />
            <div>
           <p> Download on the</p>

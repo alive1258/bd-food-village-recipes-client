@@ -70,7 +70,7 @@ const Register = () => {
   };
 
   return (
-    <div>
+    <div style={{height:'70vh'}}>
       <h3 className="text-center">please Register</h3>
       <Container className="row mx-auto d-flex justify-content-center mt-4 py-4">
         <Form onSubmit={handleRegister} className="col-md-6">
