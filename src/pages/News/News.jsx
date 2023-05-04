@@ -18,7 +18,7 @@ const News = () => {
   }, []);
 
   return (
-    <div>
+    <div style={{height:'70vh'}}>
       {/* {
             allChefs.map(allChef=><Footer 
             key={allChef._id}

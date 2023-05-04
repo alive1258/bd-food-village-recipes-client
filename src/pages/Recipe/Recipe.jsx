@@ -1,28 +1,37 @@
 import React from "react";
+import { Button } from "react-bootstrap";
+import { SlLike } from "react-icons/sl";
 import { Link } from "react-router-dom";
 
-const Recipe = ({recipesData}) => {
-  const { name,_id ,picture} = recipesData;
+const Recipe = ({ recipesData }) => {
+  const { name, _id, picture,experience ,numberRecipes,like} = recipesData;
   return (
     <div>
-      Recipe:....{name}
-      
-      <div >
-        <div className="col">
-          <div className="card h-100">
-            <img src="..." className="card-img-top" alt="..." />
+    
+      <div className="mt-4 ">
+        <div className="col ">
+          <div className="card h-100 shadow-lg p-3 mb-5 bg-body rounded">
+            <img
+              className="card-img-top p-2 "
+       
+              src={picture}
+              alt=""
+            />
             <div className="card-body">
-              <div>
-              <img style={{width:'110px',height:'110px'}} src={picture} alt="" />
+              <div></div>
+              <h4 className="card-text">
+              {name}
+              </h4>
+              <h6>Experience:-{experience}</h6>
+              <div className="d-flex justify-content-between">
+                <p>Recipes: {numberRecipes} Items</p>
+                <p  ><SlLike style={{color:'greenyellow'}}/> {like}</p>
+                
               </div>
-              <p className="card-text">
-                This is a longer card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
-              </p>
-              <p>id:---- {_id}</p>
-              <Link to={`/news/${_id}`}>details</Link>
-              {/* <Link to={'/bdchef'}>details</Link> */}
+             <Button className="w-100"
+             style={{background: "greenyellow",border:'none'}}  
+                 > <Link to={`/news/${_id}`} className="text-white" style={{ textDecoration:'none' }}>View Recipes</Link></Button>
+              
             </div>
           </div>
         </div>
