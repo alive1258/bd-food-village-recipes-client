@@ -1,16 +1,15 @@
 import { Navigate, createBrowserRouter } from "react-router-dom";
 import Main from "../layout/Main";
 import Home from "../pages/Home/Home/Home";
-import Recipes from "../pages/Home/Recipes/Recipes";
+
 import RecipesLayout from "../layout/recipesLayout";
-import ChefDetail from "../pages/Home/ChefDetail/ChefDetail";
-import NewsLayout from "../layout/NewsLayout";
+
 import News from "../pages/News/News";
 import Footer from "../pages/Shared/Footer/Footer";
 import LoginLayout from "../layout/LoginLayout/LoginLayout";
 import Login from "../pages/Login/Login/Login";
 import Register from "../pages/Login/Register/Register";
-import BdChefDetails from "../pages/BdChefDetails/BdChefDetails";
+// import BdChefDetails from "../pages/BdChefDetails/BdChefDetails";
 import PrivetRoute from "./PrivetRoute";
 import Terms from "../pages/Shared/Terms/Terms";
 import About from "../pages/About/About";
@@ -29,10 +28,7 @@ const router = createBrowserRouter([
         element: <Home></Home>,
       },
  
-      {
-        path: "detail",
-        element: <ChefDetail></ChefDetail>,
-      },
+   
    
       {
         path: "recipes/:id",
@@ -72,10 +68,7 @@ const router = createBrowserRouter([
         path: "terms",
         element: <Terms></Terms>,
       },
-      {
-        path: "bdchef",
-        element: <BdChefDetails></BdChefDetails>,
-      },
+    
     ],
   },
   {
