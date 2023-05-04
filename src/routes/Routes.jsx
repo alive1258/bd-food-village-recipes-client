@@ -90,7 +90,7 @@ const router = createBrowserRouter([
         path: ":id",
         element: <News></News>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/recipes/${params._id}`),
+          fetch(`https://recipes-bd-server-alive1258.vercel.app/recipes/${params._id}`),
       },
     ],
   },

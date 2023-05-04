@@ -7,7 +7,7 @@ const Recipes = () => {
   const [recipesDatas, setRecipeData] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/recipes")
+    fetch("https://recipes-bd-server-alive1258.vercel.app/recipes")
       .then((res) => res.json())
       .then((data) => setRecipeData(data));
     // console.log(recipesDatas)

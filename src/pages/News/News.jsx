@@ -12,13 +12,7 @@ const News = () => {
   const [allChefs, setAllChefs] = useState([]);
 //   const {_id} =useParams()
 
-//   useEffect(() => {
-//     fetch(`http://localhost:5000/recipes/${params._id}`)
-//       .then((res) => res.json())
-//       .then(data=>console.log(data))
-//       .then((data) => setAllChefs(data));
-//     console.log("allChefs new...", allChefs);
-//   }, []);
+
 
   return (
     <div style={{height:'70vh'}}>
