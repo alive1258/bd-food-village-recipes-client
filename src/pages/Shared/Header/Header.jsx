@@ -8,10 +8,7 @@ import "./Header.css";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
 import { FaSistrix, FaUserCircle } from "react-icons/fa";
-
-// import Image from "react-bootstrap/Image";
-// import OverlayTrigger from "react-bootstrap/OverlayTrigger";
-// import { Tooltip } from "react-bootstrap";
+import ActiveLink from "../../../components/ActiveLink/ActiveLink";
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -34,21 +31,11 @@ const Header = () => {
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="mx-auto gap-4 align-items-center">
-              {/* <Nav.Link href="#features">Home</Nav.Link> */}
-
-              <Link className=" text-white " to="/">
-                Home
-              </Link>
-              <Link className=" text-white" to="/blog">
-                Blog
-              </Link>
-              <Link className=" text-white" to="/about">
-                About
-              </Link>
-              <Link className=" text-white" s to="/contact">
-                Contact Us
-              </Link>
+            <Nav className="mx-auto text-decoration-none gap-4 align-items-center text-white">
+              <ActiveLink to="/">Home</ActiveLink>
+              <ActiveLink to="/blog">Blog</ActiveLink>
+              <ActiveLink to="/about">About</ActiveLink>
+              <ActiveLink to="/contact">Contact Us</ActiveLink>
 
               <Form className="d-flex ps-4">
                 <Form.Control
@@ -63,7 +50,6 @@ const Header = () => {
                 >
                   <FaSistrix />
                 </div>
-                {/* <Button style={{background:"greenyellow"}} variant="outline-success">Search</Button> */}
               </Form>
             </Nav>
 

@@ -17,3 +17,6 @@
   .dropdown:hover .dropdown-content {
     display: block;
   }
+  .listNav {
+    text-decoration: none;
+  }
