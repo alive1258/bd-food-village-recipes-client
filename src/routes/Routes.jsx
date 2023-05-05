@@ -16,6 +16,7 @@ import About from "../pages/About/About";
 import Blog from "../pages/Blog/Blog";
 import Contact from "../pages/Contact/Contact";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
+import Chefs from "../pages/Chefs/Chefs";
 
 const router = createBrowserRouter([
   {
@@ -28,14 +29,10 @@ const router = createBrowserRouter([
         element: <Home></Home>,
       },
  
-   
-   
-      {
-        path: "recipes/:id",
-        element: <Footer></Footer>,
-      },
     ],
   },
+
+
   {
     path: "/",
     element: <LoginLayout></LoginLayout>,
@@ -67,6 +64,7 @@ const router = createBrowserRouter([
       {
         path: "terms",
         element: <Terms></Terms>,
+     
       },
     
     ],
@@ -81,9 +79,9 @@ const router = createBrowserRouter([
     children: [
       {
         path: ":id",
-        element: <News></News>,
+        element: <Chefs></Chefs>,
         loader: ({ params }) =>
-          fetch(`https://recipes-bd-server-alive1258.vercel.app/recipes/${params._id}`),
+          fetch(`https://recipes-bd-server-alive1258.vercel.app/recipes/${params.id}`),
       },
     ],
   },

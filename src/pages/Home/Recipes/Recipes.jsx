@@ -10,7 +10,7 @@ const Recipes = () => {
     fetch("https://recipes-bd-server-alive1258.vercel.app/recipes")
       .then((res) => res.json())
       .then((data) => setRecipeData(data));
-    // console.log(recipesDatas)
+    
   }, []);
   return (
     <div  className="container mx-auto  mt-4 ">

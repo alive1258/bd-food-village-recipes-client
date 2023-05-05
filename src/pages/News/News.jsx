@@ -1,37 +1,15 @@
-import React, { useEffect, useState } from "react";
-import { Button, Card, Container } from "react-bootstrap";
-import { useParams } from "react-router-dom";
-import { useLoaderData } from "react-router-dom";
-// import Footer from "../Shared/Footer/Footer";
+import React, { useState } from "react";
+import Chefs from "../Chefs/Chefs";
 
 const News = () => {
-    const recipe = useLoaderData();
-    // const {author}=allRecipes
-
-  console.log('recipe---------',recipe)
-  const [allChefs, setAllChefs] = useState([]);
-//   const {_id} =useParams()
-
 
 
   return (
-    <div style={{height:'70vh'}}>
-      {/* {
-            allChefs.map(allChef=><Footer 
-            key={allChef._id}
-            allChef={allChef}
-            ></Footer>)
-        } */}
-      <Container className="mt-4">
-        <Card>
-          <Card.Img variant="top" src="" />
-          <Card.Body>
-            {/* <Card.Title>name:---{author.name}</Card.Title> */}
-            <Card.Text>title....</Card.Text>
-            <Button variant="primary">Favorite </Button>
-          </Card.Body>
-        </Card>
-      </Container>
+    <div style={{ height: "70vh" }}>
+      news
+      {/* {foods.map((food) => (
+        <Chefs key={food._id} food={food}></Chefs>
+      ))} */}
     </div>
   );
 };

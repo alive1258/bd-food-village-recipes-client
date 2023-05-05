@@ -1,11 +1,15 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const Terms = () => {
+    // const allRecipes =useLoaderData()
+    // console.log('allRecipes....',allRecipes)
+    // const {_id}=allRecipes
   return (
     <Container className="mt-4 py-4" style={{height:'70vh'}}>
-      <h1>term and conditions</h1>
+      <h1>term and conditions:</h1>
+      {/* <h1>term and conditions:{_id}</h1> */}
       <p>
         {" "}
         You may not use any “deep-link”, “page-scrape”, “robot”, “spider” or
