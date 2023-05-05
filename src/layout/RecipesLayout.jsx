@@ -1,17 +1,18 @@
 import React from 'react';
 import Header from '../pages/Shared/Header/Header';
 import Footer from '../pages/Shared/Footer/Footer';
-import News from '../pages/News/News';
-import Chefs from '../pages/Chefs/Chefs';
+import { Outlet } from 'react-router-dom';
+
+
 
 
 const RecipesLayout = () => {
     return (
         <div>
-            <Header></Header>
-            {/* <News></News> */}
-            <Chefs></Chefs>
+            <Header></Header>       
+            <Outlet></Outlet>
             <Footer></Footer>
+           
         </div>
     );
 };

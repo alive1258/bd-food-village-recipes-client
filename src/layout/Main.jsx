@@ -14,9 +14,9 @@ const Main = () => {
     <div>
       <Header></Header>
       <HomeBanner></HomeBanner>
-    <Recipes></Recipes>
-    <HealthyMeals></HealthyMeals>
-    <PopularRecipes></PopularRecipes>
+      <Recipes></Recipes>
+      <HealthyMeals></HealthyMeals>
+      <PopularRecipes></PopularRecipes>
       <Footer></Footer>
     </div>
   );

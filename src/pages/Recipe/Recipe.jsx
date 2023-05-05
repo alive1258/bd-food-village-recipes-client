@@ -12,7 +12,7 @@ const Recipe = ({ recipesData }) => {
       <div className="mt-4 ">
         <div className="col ">
           <div className="card h-100 shadow-lg p-3 mb-5 bg-body rounded">
-            <LazyLoad>
+            <LazyLoad >
               <img className="card-img-top p-2 " src={picture} alt="" />
             </LazyLoad>
 
