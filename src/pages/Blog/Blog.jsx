@@ -3,7 +3,7 @@ import { Container } from "react-bootstrap";
 
 const Blog = () => {
   return (
-    <Container className="mt-4" style={{ height: "70vh" }}>
+    <Container className="mt-4" >
       <div className="row row-cols-1 row-cols-md-2 g-4">
         <div className="col">
           <div className="card h-100">

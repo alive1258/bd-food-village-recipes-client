@@ -1,12 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, Container } from "react-bootstrap";
 import { useLoaderData } from "react-router-dom";
 import { SlLike } from "react-icons/sl";
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
-import { FaRegStar, FaStar } from "react-icons/fa";
+import Toast from "react-bootstrap/Toast";
 
 const Chefs = () => {
+  const [showA, setShowA] = useState(false);
+  const [showB, setShowB] = useState(true);
+  const [showC, setShowC] = useState(false);
+
+  const toggleShowA = () => setShowA(!showA);
+  const toggleShowB = () => setShowB(!showB);
+  const toggleShowC = () => setShowC(!showC);
+
+
   const allRecipes = useLoaderData();
   console.log("allrecips...", allRecipes);
   const {
@@ -26,7 +35,10 @@ const Chefs = () => {
         <h1 style={{ color: "greenyellow" }} className="text-center m-4">
           Chef Details
         </h1>
-        <div className="row p-4 text-white rounded" style={{background:"darkgray"}}>
+        <div
+          className="row p-4 text-white rounded"
+          style={{ background: "darkgray" }}
+        >
           <div className="col-md-4">
             <img className="img-fluid rounded " src={picture} alt="" />
           </div>
@@ -49,6 +61,9 @@ const Chefs = () => {
         </div>
 
         <div>
+          <h1 className="text-center m-4" style={{ color: "greenyellow" }}>
+            Latest Recipes{" "}
+          </h1>
           <div className="row row-cols-1 row-cols-md-3 g-4 mt-4">
             <div className="col">
               <div className="card h-100">
@@ -91,15 +106,30 @@ const Chefs = () => {
                     />
                     {rating.number}
                   </p>
-            
                 </div>
                 <div class="card-footer">
                   <Button
-                    className="w-100"
+                    onClick={toggleShowA}
+                    className="mb-2 w-100"
                     style={{ background: "greenyellow", border: "none" }}
                   >
                     Favorite
                   </Button>
+
+                  <div>
+                  <Toast show={showA} onClose={toggleShowA}>
+          <Toast.Header>
+            <img
+              src="holder.js/20x20?text=%20"
+              className="rounded me-2"
+              alt=""
+            />
+            <strong className="me-auto">Food</strong>
+            
+          </Toast.Header>
+          <Toast.Body>My favorite food</Toast.Body>
+        </Toast>
+                </div>
                 </div>
               </div>
             </div>
@@ -148,11 +178,27 @@ const Chefs = () => {
                 </div>
                 <div class="card-footer">
                   <Button
-                    className="w-100"
+                   onClick={toggleShowB}
+                    className="mb-2 w-100"
                     style={{ background: "greenyellow", border: "none" }}
                   >
                     Favorite
                   </Button>
+
+                  <div>
+                  <Toast show={showB} onClose={toggleShowB}>
+          <Toast.Header>
+            <img
+              src="holder.js/20x20?text=%20"
+              className="rounded me-2"
+              alt=""
+            />
+            <strong className="me-auto">Food</strong>
+            
+          </Toast.Header>
+          <Toast.Body>My favorite food</Toast.Body>
+        </Toast>
+                </div>
                 </div>
               </div>
             </div>
@@ -200,12 +246,31 @@ const Chefs = () => {
                 </div>
                 <div class="card-footer">
                   <Button
-                    className="w-100"
+                    onClick={toggleShowC}
+                    className="mb-2 w-100"
                     style={{ background: "greenyellow", border: "none" }}
                   >
                     Favorite
                   </Button>
+
+                  <div>
+                  <Toast show={showC} onClose={toggleShowC}>
+                 
+          <Toast.Header>
+            <img
+              src="holder.js/20x20?text=%20"
+              className="rounded me-2"
+              alt=""
+            />
+            <strong className="me-auto">Food</strong>
+          
+          </Toast.Header>
+          <Toast.Body>My favorite food</Toast.Body>
+        </Toast>
                 </div>
+                </div>
+
+                
               </div>
             </div>
           </div>
